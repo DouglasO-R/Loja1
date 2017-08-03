@@ -46,7 +46,7 @@
                 <td>
                 <select name="tipoProduto">
                    <?php 
-                       $tipos = array("produto","livroFisico","ebook");
+                       $tipos = array("livroFisico","ebook");
                        foreach($tipos as $tipo){ 
                        $esseEhOTipo  = get_class($produto) == $tipo;
                        $selecaoTipo=$esseEhOTipo?"selected='selected'":"";
@@ -65,11 +65,11 @@
             <tr>
                 <td>Marca D'agua</td>
                 <td>
-                    <input type="text" class="form-control" name="marcaDagua" value="<?php //if($produto->getMarcaDagua()){echo $produto->getMarcaDagua();}?>">
+                    <input type="text" class="form-control" name="marcaDagua" value="<?php if($produto->temMarcaDagua()){echo $produto->getMarcaDagua();}?>">
                 </td>
             </tr>
             <td>Taxa de Impressao</td>
                 <td>
-                    <input type="text" class="form-control" name="taxaImpressao" value="<?php //if($produto->getTaxaImpressao()){echo $produto->getTaxaImpressao();}?>">
+                    <input type="text" class="form-control" name="taxaImpressao" value="<?php if($produto->temTaxaImpressao()){echo $produto->getTaxaImpresao();}?>">
                 </td>
             </tr>

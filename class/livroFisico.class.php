@@ -10,4 +10,12 @@ class livroFisico extends livro{
     public function setTaxaImpresao($taxaImpresao){
         return $this->taxaImpresao = $taxaImpresao;
     }
+    
+    function atualizaBaseadomEm($params) {
+    
+        $this->setIsbn($params["isbn"]);       
+        $this->setTaxaImpresao($params["taxaImpressao"]);
+        
+        }
+    
 }

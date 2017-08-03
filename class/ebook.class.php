@@ -11,4 +11,11 @@ class ebook extends livro{
         return $this->marcaDagua = $marcaDagua;
     }
     
+    function atualizaBaseadomEm($params) {
+    
+        $this->setIsbn($params["isbn"]);       
+        $this->setMarcaDagua($params["MarcaDagua"]);
+        
+        }
+    
 }

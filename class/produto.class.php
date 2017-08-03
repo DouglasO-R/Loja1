@@ -1,6 +1,6 @@
 <?php
 
-class produto {
+abstract class produto {
     
     private $id;
     private $nome;
@@ -91,15 +91,5 @@ class produto {
         return $this->preco * 0.195;
     }
     
-    public function atualizaBaseadomEm($params) {
-    if ($this->temIsbn()) {
-        $this->setIsbn($params["isbn"]);
-    }
-    if ($this->temMarcaDagua()) {
-        $this->setMarcaDagua($params["MarcaDagua"]);
-    }
-    if ($this->temTaxaImpressao()) {
-        $this->setTaxaImpressao($params["taxaImpressao"]);
-    }
-}
+    abstract function atualizaBaseadomEm($params);
 }

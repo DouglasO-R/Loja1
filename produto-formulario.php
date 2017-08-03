@@ -11,7 +11,7 @@ $categoria = new categoria();
 $categoria->getId(1);
 $usado = "";
 
-$produto = new produto("","","",$categoria,"");
+$produto = new livroFisico("","","",$categoria,"");
 
 
 
