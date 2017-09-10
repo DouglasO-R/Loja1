@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/LojaAluraPOO/class/livro.class.php</file>
             <file>file:/C:/xampp/htdocs/LojaAluraPOO/altera-produto.php</file>
             <file>file:/C:/xampp/htdocs/LojaAluraPOO/adiciona-produto.php</file>
             <file>file:/C:/xampp/htdocs/LojaAluraPOO/class/produtoDAO.class.php</file>
             <file>file:/C:/xampp/htdocs/LojaAluraPOO/class/produto.class.php</file>
+            <file>file:/C:/xampp/htdocs/LojaAluraPOO/class/livroFisico.class.php</file>
             <file>file:/C:/xampp/htdocs/LojaAluraPOO/class/ProdutoFactory.php</file>
+            <file>file:/C:/xampp/htdocs/LojaAluraPOO/class/ebook.class.php</file>
+            <file>file:/C:/xampp/htdocs/LojaAluraPOO/produto-formulario-base.php</file>
+            <file>file:/C:/xampp/htdocs/LojaAluraPOO/produto-formulario.php</file>
             <file>file:/C:/xampp/htdocs/LojaAluraPOO/produto-altera-formulario.php</file>
         </group>
     </open-files>

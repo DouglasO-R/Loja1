@@ -1,3 +1,3 @@
 <?php
 
-$conexao = mysqli_connect('localhost', 'root', '', 'loja');
+$conexao = mysqli_connect($_ENV["DATABASE_TESTHOST"], $_ENV["DATABASE_TESTDBUSER"], $_ENV["DATABASE_TESTDBPASS"], $_ENV["DATABASE_TESTDBNAME"]);
