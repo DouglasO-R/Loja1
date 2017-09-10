@@ -1,3 +1,10 @@
 <?php
 
-$conexao = mysqli_connect($_ENV["DATABASE_TESTHOST"], $_ENV["DATABASE_TESTDBUSER"], $_ENV["DATABASE_TESTDBPASS"], $_ENV["DATABASE_TESTDBNAME"]);
+$host = $_ENV["DATABASE_TESTHOST"];
+$user = $_ENV["DATABASE_TESTDBUSER"];
+$pass = $_ENV["DATABASE_TESTDBPASS"];
+$db = $_ENV["DATABASE_TESTDBNAME"];
+
+
+
+$conexao = mysqli_connect($host, $user , $pass,$db );
