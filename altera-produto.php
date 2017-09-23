@@ -18,9 +18,9 @@
                        
    
          if(array_key_exists('usado', $_POST)){
-             $$produto->setUsado("true");
+             $produto->setUsado("true");
          }else{
-             $$produto->setUsado("false");
+             $produto->setUsado("false");
          }
          $produtoDAO = new produtoDAO($conexao);
          
@@ -28,12 +28,12 @@
         if($produtoDAO->alteraProduto($produto)) {?>
 <p class="text-success">Alterado Produto: <?= $produto->getNome();?> Preço:R$<?= $produto->getPreco(); ?></p>
     <?php   } else { 
-               $msg = mysqli_errno($conexao);
+               $msg = pg_result_erro($conexao);
         ?>
                 <p class="text-danger">Produto nao foi alterado devido ao erro:<?= $msg ?></p>
     <?php     }
        
-        mysqli_close($conexao);
+        pg_close($conexao);
          ?>
        
 

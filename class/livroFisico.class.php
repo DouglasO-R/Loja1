@@ -14,7 +14,7 @@ class livroFisico extends livro{
     function atualizaBaseadomEm($params) {
     
         $this->setIsbn($params["isbn"]);       
-        $this->setTaxaImpresao($params["taxaImpressao"]);
+        $this->setTaxaImpresao($params["taxaimpressao"]);
         
         }
     

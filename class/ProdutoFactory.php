@@ -9,7 +9,7 @@ class ProdutoFactory {
         $descricao = $params['descricao'];
         $categoria = new categoria();
         $usado = $params['usado'];
-     
+        var_dump($params);
         if(in_array($tipoProduto, $this->classes)){
             return new $tipoProduto($nome,$preco,$descricao,$categoria,$usado);
         }

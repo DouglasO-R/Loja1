@@ -1,7 +1,7 @@
 <?php
 //error_reporting(E_ALL^E_NOTICE);
  require_once 'mostra-alerta.php';
- require_once'conecta.php';
+ require_once 'conecta.php';
  require_once "class/ProdutoFactory.php";
  
  function CarregaClasse($NomeDaClasse){

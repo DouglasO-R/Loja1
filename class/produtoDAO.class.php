@@ -26,15 +26,18 @@ class produtoDAO {
                    VALUES ('{$produto->getNome()}',{$produto->getPreco()},'{$produto->getDescricao()}',"
                    . "{$produto->getCategoria()->getId()},{$produto->getUsado()},"
                    . "'{$isbn}','{$tipoProduto}' )";
-           return mysqli_query($this->conexao, $querry);
+           return pg_query($this->conexao, $querry);
          }
          
          function listaProdutos(){
-             $produtos = array();
-             $resultado = mysqli_query($this->conexao, "select p.*,c.nome as categoria_nome from produtos as p join categorias as c on p.categoria_id = c.id ");
-              while($produto_array = mysqli_fetch_assoc($resultado)){
+            
+            $produtos = array();
+           $resultado = pg_query($this->conexao, "select p.*,c.nome as categoria_nome from produtos as p join categorias as c on p.categoria_id = c.id ");
+                            
               
-                  $tipoProduto = $produto_array['tipoProduto'];
+             while($produto_array = pg_fetch_assoc($resultado) ){
+                
+                  $tipoProduto = $produto_array['tipoproduto'];
                   $produto_id = $produto_array['id'];                                 
                   $categoria_nome = $produto_array['categoria_nome'];
                   
@@ -47,20 +50,23 @@ class produtoDAO {
                   
                   array_push($produtos, $produto);
                     }
+                    
                     return $produtos;
+                    
+                                 
          }
          
           function removeProduto($id){
              $querry = " delete from produtos where id = {$id} ";
-             return mysqli_query($this->conexao, $querry);
+             return pg_query($this->conexao, $querry);
          } 
          
          function buscaProdutos( $id){
              $querry = "select*from produtos where id = {$id}";
-             $resultado = mysqli_query($this->conexao, $querry);
-             $produto_buscado = mysqli_fetch_assoc($resultado);
+             $resultado = pg_query($this->conexao, $querry);
+             $produto_buscado = pg_fetch_assoc($resultado);
            
-            $tipoProduto = $produto_buscado['tipoProduto'];
+            $tipoProduto = $produto_buscado['tipoproduto'];
             $produto_id = $produto_buscado['id'];                                 
             $categoria_id = $produto_buscado['categoria_id'];
                   
@@ -93,7 +99,7 @@ class produtoDAO {
         
              $querry = "update produtos set nome = '{$produto->getNome()}', preco = {$produto->getPreco()}, descricao = '{$produto->getDescricao()}', 
               categoria_id= {$produto->getCategoria()->getId()}, usado = '{$produto->getUsado()}', isbn = '{$isbn}', tipoProduto = '{$tipoProduto}' where id = '{$produto->getId()}'";
-             return mysqli_query($this->conexao, $querry);
+             return pg_query($this->conexao, $querry);
             
          }
 }
