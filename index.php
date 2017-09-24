@@ -8,6 +8,7 @@ and open the template in the editor.
  require_once 'cabecalho.php';
  require_once 'logica-usuario.php';
 
+
 ?> 
         
         <?php
