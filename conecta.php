@@ -1,10 +1,12 @@
 <?php
-$con = isset($_ENV["con_string"]);
+
+ 
+    $host = isset($_ENV["DATABASE_TESTHOST"]);
+    $porta = isset($_ENV["DATABASE_PORT"]);
+    $db = isset($_ENV["DATABASE_TESTDBNAME"]);
+    $user = isset($_ENV["DATABASE_TESTDBUSER"]);
+    $pass = isset($_ENV["DATABASE_TESTDBPASS"]);
 
 
 
-print_r($_ENV["con_string"]);
-
-
-
- $conexao = pg_connect("'".$_ENV["con_string"]."'");
+ $conexao = pg_connect("'".$host." ".$porta." ".$db." ".$user." ".$pass."'");
