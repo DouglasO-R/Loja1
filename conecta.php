@@ -9,4 +9,4 @@
 
 
 
- $conexao = pg_connect("'".$host,$porta,$db,$user,$pass."'");
+ $conexao = pg_connect("host = $host,port = $porta,dbname = $db,user = $user,password = $pass");
