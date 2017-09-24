@@ -1,6 +1,6 @@
 <?php
 
-    $con = getenv("con_string");
+    $con = parse_str(getenv("con_string"));
 
     print_r($con);
 
