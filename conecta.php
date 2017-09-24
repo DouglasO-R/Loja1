@@ -1,11 +1,9 @@
 <?php
 
-    $con = parse_str(getenv("con_string"));
+$con = isset($_ENV["con_string"]) ? $_ENV["con_string"] : "host=ec2-23-21-220-152.compute-1.amazonaws.com
+port=5432  dbname=dbfsj5pv00mdk0  user=lwesfasolsdlvf  password=4cc36f4e3f97e0c175a130431d5a0d0e46ea2aad7a923315f114b28a7e7aff7a";
 
-    print_r($con);
 
-    $con2 = $_ENV["con_string"];
 
-    print_r($con2);
 
- $conexao = pg_connect($con);
+ $conexao = pg_connect(parse_str($con));
