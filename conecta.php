@@ -8,4 +8,4 @@
     $pass = $_ENV["DATABASE_TESTDBPASS"];
 
 
- $conexao = pg_connect("host = $host,port =  $porta,dbname = $db,user = $user,password = $pass");
+ $conexao = pg_connect($host,$porta,$db, $user, $pass);
