@@ -1,10 +1,10 @@
 <?php
 $con = isset($_ENV["con_string"]);
 
-vardump($con);
 
-print_r($con);
 
-echo $con;
+print_r($_ENV["con_string"]);
+
+
 
  $conexao = pg_connect($con);
