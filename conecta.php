@@ -1,12 +1,11 @@
 <?php
 
- 
-    $host = isset($_ENV["DATABASE_TESTHOST"]);
-    $porta = isset($_ENV["DATABASE_PORT"]);
-    $db = isset($_ENV["DATABASE_TESTDBNAME"]);
-    $user = isset($_ENV["DATABASE_TESTDBUSER"]);
-    $pass = isset($_ENV["DATABASE_TESTDBPASS"]);
+    
+    $host = $_ENV["DATABASE_TESTHOST"];
+    $porta = $_ENV["DATABASE_PORT"];
+    $db = $_ENV["DATABASE_TESTDBNAME"];
+    $user = $_ENV["DATABASE_TESTDBUSER"];
+    $pass = $_ENV["DATABASE_TESTDBPASS"];
 
 
-
- $conexao = pg_connect("host = $host,port = $porta,dbname = $db,user = $user,password = $pass");
+ $conexao = pg_connect("host = {$host},port = { $porta},dbname = {$db},user = {$user},password = {$pass}");
