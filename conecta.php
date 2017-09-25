@@ -6,4 +6,4 @@ port=5432  dbname=dbfsj5pv00mdk0  user=lwesfasolsdlvf  password=4cc36f4e3f97e0c1
 
 
 
- $conexao = pg_connect(parse_str($con));
+ $conexao = pg_connect( $con);
