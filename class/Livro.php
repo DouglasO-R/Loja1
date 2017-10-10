@@ -1,6 +1,6 @@
 <?php
 
-abstract class livro extends produto{
+abstract class Livro extends Produto{
     private $isbn;
     
     public function getIsbn(){

@@ -1,6 +1,6 @@
 <?php
 
-class livroFisico extends livro{
+class LivroFisico extends Livro{
     
     private $taxaImpresao;
     

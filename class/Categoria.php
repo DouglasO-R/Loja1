@@ -11,7 +11,7 @@
  *
  * @author JTony-Note
  */
-class categoria {
+class Categoria {
     private $id;
     private $nome;
     

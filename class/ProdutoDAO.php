@@ -1,6 +1,6 @@
 <?php
 
-class produtoDAO {
+class ProdutoDAO {
     private $conexao;
     
     function __construct($conexao) {
@@ -32,8 +32,10 @@ class produtoDAO {
          function listaProdutos(){
             
             $produtos = array();
-           $resultado = pg_query($this->conexao, "select p.*,c.nome as categoria_nome from produtos as p join categorias as c on p.categoria_id = c.id ");
-                            
+            $querry = "select p.*,c.nome as categoria_nome from produtos as p join categorias as c on 
+            p.categoria_id = c.id " ;
+            $resultado = pg_query($this->conexao, $querry );
+                             
               
              while($produto_array = pg_fetch_assoc($resultado) ){
                 

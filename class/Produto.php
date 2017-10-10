@@ -1,6 +1,6 @@
 <?php
 
-abstract class produto {
+abstract class Produto {
     
     private $id;
     private $nome;
@@ -78,13 +78,13 @@ abstract class produto {
     }
     
     public function temIsbn(){
-        return $this instanceof livro;
+        return $this instanceof Livro;
     }
     public function temMarcaDagua(){
-        return $this instanceof ebook;
+        return $this instanceof Ebook;
     }
     public function temTaxaImpressao(){
-        return $this instanceof livroFisico;
+        return $this instanceof LivroFisico;
     }
     
     public function calculaImposto(){

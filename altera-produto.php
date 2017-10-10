@@ -22,11 +22,11 @@
          }else{
              $produto->setUsado("false");
          }
-         $produtoDAO = new produtoDAO($conexao);
+         $produtoDAO = new ProdutoDAO($conexao);
          
          
         if($produtoDAO->alteraProduto($produto)) {?>
-<p class="text-success">Alterado Produto: <?= $produto->getNome();?> Preço:R$<?= $produto->getPreco(); ?></p>
+        <p class="text-success">Alterado Produto: <?= $produto->getNome();?> Preço:R$<?= $produto->getPreco(); ?></p>
     <?php   } else { 
                $msg = pg_result_erro($conexao);
         ?>

@@ -1,6 +1,6 @@
 <?php
 
-class categoriaDAO {
+class CategoriaDAO {
     private $conexao;
     
     function __construct($conexao) {
@@ -10,16 +10,15 @@ class categoriaDAO {
     function listaCategoria(){
 
         $categorias = [];
-        $querry = pg_query($this->conexao,"select * from categorias");
-        while ($categoria_array = pg_fetch_assoc($querry)){
+        $querry = "select * from categorias";
+        $resultado = pg_query($this->conexao,$querry);
+        while ($categoria_array = pg_fetch_assoc($resultado)){
             
-            $categoria = new categoria();
+            $categoria = new Categoria();
             $categoria->setId($categoria_array['id']);
             $categoria->setNome($categoria_array['nome']);
             
-            array_push($categorias, $categoria);
-
-            
+            array_push($categorias, $categoria);            
             
         }
         return $categorias;

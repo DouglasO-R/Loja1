@@ -5,7 +5,7 @@
  require_once "class/ProdutoFactory.php";
  
  function CarregaClasse($NomeDaClasse){
-     require_once ("class/".$NomeDaClasse.".class.php");
+     require_once("class/".$NomeDaClasse.".php");
  }
  spl_autoload_register("CarregaClasse");
 ?>

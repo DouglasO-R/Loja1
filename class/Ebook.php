@@ -1,6 +1,6 @@
 <?php
 
-class ebook extends livro{
+class Ebook extends Livro{
     
     private $marcaDagua;
     

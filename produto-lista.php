@@ -1,7 +1,7 @@
 <?php
  require_once 'cabecalho.php'; 
 
- $categoriaDAO = new categoriaDAO($conexao);
+ $categoriaDAO = new CategoriaDAO($conexao);
  $categorias = $categoriaDAO->listaCategoria();
  ?> 
 <?php 
@@ -11,7 +11,7 @@
 
 <table class="table table-striped table-bordered table-hover">
     <?php
-    $produtoDAO = new produtoDAO($conexao);
+    $produtoDAO = new ProdutoDAO($conexao);
     $produtos = $produtoDAO->listaProdutos();
      foreach ($produtos as $produto) {
      ?>

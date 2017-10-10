@@ -1,5 +1,5 @@
       <?php 
-      require_once 'cabecalho.php';      
+      require_once('cabecalho.php');      
       require_once 'logica-usuario.php';
     
         
@@ -23,19 +23,19 @@
          }
  
         
-        $produtoDAO = new produtoDao($conexao);
+        $produtoDAO = new ProdutoDao($conexao);
         
         if($produtoDAO->insereProduto($produto)){?>
-<p class="text-success">Adicionado Produto: <?= $produto->getNome();?> Preço:R$<?= $produto->getPreco(); ?></p>
-    <?php   } else { 
-               $msg = mysqli_errno($conexao); 
-        ?>
+            <p class="text-success">Adicionado Produto: <?= $produto->getNome();?> Preço:R$<?= $produto->getPreco(); ?></p>
+         <?php   } else { 
+                 $msg = pg_result_error_field($conexao); 
+             ?>
                 <p class="text-danger">Produto nao foi adicionado devido ao erro:<?= $msg ?></p>
     <?php     }
        
-        mysqli_close($conexao);
+        pg_close($conexao);
          ?>
        
 
 
-      <?php include 'rodape.php';  ?>
+      <?php include('rodape.php');  ?>

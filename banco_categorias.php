@@ -4,10 +4,11 @@ require_once 'class/categoria.class.php';
 
 function listaCategoria($conexao){
     $categorias = [];
-    $querry = mysqli_query($conexao,"select * from categorias");
-    while ($categoria_array = mysqli_fetch_assoc($querry)){
+    $querry = "select * from categorias";
+    $resultado = pg_query($conexao,$querry);
+    while ($categoria_array = pg_fetch_assoc($querry)){
         
-        $categoria = new categoria();
+        $categoria = new Categoria();
         $categoria->setId($categoria_array['id']);
         $categoria->setNome($categoria_array['nome']);
         
